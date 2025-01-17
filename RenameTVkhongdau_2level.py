@@ -2,7 +2,10 @@
 RenameTVkhongdau_2level v1.01 b2501
 Tác giả: NamNT (thanhnam1222@gmail.com)
 Chức năng:
-     Đổi tên file, folder Tiếng Việt có dấu thành không dấu 2 cấp độ folder hiện hành và fodler con
+     Đổi tên file, folder Tiếng Việt có dấu thành không dấu 2 level : folder hiện hành và fodler con của nó
+
+     Thử thách: thay vì 2 level, bạn hãy cải tiến chương trình để có thể xử lý với n cấp độ xem sao. 
+
 Tham khảo code của longnh.com
 """
 import os
