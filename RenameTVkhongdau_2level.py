@@ -1,5 +1,5 @@
 """
-RenameTVkhongdau_2level v1.0 b2501
+RenameTVkhongdau_2level v1.01 b2501
 Tác giả: NamNT (thanhnam1222@gmail.com)
 Chức năng:
      Đổi tên file, folder Tiếng Việt có dấu thành không dấu 2 cấp độ folder hiện hành và fodler con
@@ -44,8 +44,13 @@ for file in ds1:
     newlink= os.path.join(folder_path, convert(file))
     oldpath = link    
     newpath = newlink
-    os.rename(oldpath, newpath)
-ans=input('Đã xong thư mục hiện hành. Bạn có muốn Đổi tên không dấu thư mục con (y/n)?')
+    if (oldpath!=newpath):
+        try:
+            os.rename(oldpath, newpath)
+        except OSError as error:
+            print(f"Error renaming file: {error}")
+ans='y'
+#ans=input('Đã xong thư mục hiện hành. Bạn có muốn Đổi tên không dấu thư mục con (y/n)?')
 if (ans=='y'):
 # Đổi tên file + folder level 2 (folder con)
 # Có Cập nhật lại danh sách folder
@@ -59,5 +64,9 @@ if (ans=='y'):
                 newlink= os.path.join(file2, convert(file))
                 oldpath = link
                 newpath = newlink
-                os.rename(oldpath, newpath)
-t=input("Đã xong.Nhấn phím bất kỳ để tắt")
+                if (oldpath!=newpath):
+                    try:
+                        os.rename(oldpath, newpath)
+                    except OSError as error:
+                        print(f"Error renaming file: {error}") 
+#t=input("Đã xong.Nhấn phím bất kỳ để tắt")
